@@ -1,160 +1,99 @@
+import React from "react";
 import {
-  FaHtml5,
-  FaCss3Alt,
-  FaJsSquare,
-  FaReact,
-  FaNodeJs,
-  FaGithub,
-  FaGitAlt,
-  FaFigma,
-  FaNode,
+  FaHtml5, FaCss3Alt, FaJs, FaReact, FaBootstrap, FaNodeJs, FaPython, FaGit, FaGithub, 
 } from "react-icons/fa";
 import {
-  SiTailwindcss,
-  SiBootstrap,
-  SiExpress,
-  SiNextdotjs,
-  SiNetlify,
-  SiMongodb,
-  SiSocketdotio,
-  SiPostman,
-  SiGraphql,
-  SiRedux,
-  SiJsonwebtokens,
-  SiRender,
+  SiMongodb, SiMysql, SiExpress, SiPostman, SiCanva, SiVercel, SiNetlify
 } from "react-icons/si";
-import { TbBrandFramerMotion } from "react-icons/tb";
-import { DiVisualstudio } from "react-icons/di";
-import { IoLogoNpm, IoLogoVercel } from "react-icons/io5";
 
 const About = () => {
   return (
-    <div id="about" className="bg-[#ffffff] min-h-screen flex items-center">
-      <div className="max-w-[90%] md:max-w-[75%] mx-auto font-inter space-y-10 py-10">
-        {/* Header */}
-        <h1 className="text-4xl md:text-5xl font-bold text-center text-[#fe5617]">
+    <section id="about" className="py-16 px-10 bg-white text-center">
+      {/* About Me Section */}
+      <div className="max-w-4xl mx-auto">
+        <h1 className="text-5xl font-serif font-semibold text-gray-800 mb-10 tracking-wide">
           About Me
         </h1>
-
-        {/* About Me Section */}
-        <p className="text-lg md:text-xl text-gray-700 text-center leading-relaxed">
-          I’m <span className="font-bold text-[#fe5617]">Mohammed Imran</span>,
-          a passionate MERN stack developer with experience in building
-          micro-SaaS projects and delivering 10+ projects for clients. As a
-          tutor, I’ve successfully taught frontend development to more than
-          <span className="font-bold text-[#fe5617]"> 50+ students</span>, and
-          as a content creator, I’ve built a community of
-          <span className="font-bold text-[#fe5617]"> 25k+ followers</span> on
-          social media. Currently, I’m a pre-final year B.Tech student in
-          Computer Science Engineering.
+        <p className="text-lg text-gray-800 leading-relaxed font-serif">
+          Hi there! I'm <span className="font-extrabold">Sundar</span>, a passionate 
+          <span className="text-blue-700 font-bold">Python Full-Stack Developer</span> skilled in 
+          <span className="text-blue-700 font-bold"> React, Node.js, Flask,</span> and 
+          <span className="text-blue-700 font-bold"> MongoDB</span>. I specialize in building dynamic, 
+          <span className="font-bold"> scalable web applications</span> while continuously learning and improving.
         </p>
 
-        {/* Skills Section */}
-        <div className="space-y-8">
-          <h2 className="text-2xl font-bold text-[#fe5617] text-center">
-            My Skills
-          </h2>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
-            {/* Skill Icons */}
-            <div className="flex flex-col items-center space-y-2">
-              <FaHtml5 size={40} className="text-[#e34c26]" />
-              <span className="font-bold">HTML5</span>
-            </div>
-            <div className="flex flex-col items-center space-y-2">
-              <FaCss3Alt size={40} className="text-[#264de4]" />
-              <span className="font-bold">CSS3</span>
-            </div>
-            <div className="flex flex-col items-center space-y-2">
-              <FaJsSquare size={40} className="text-[#f7df1e]" />
-              <span className="font-bold">JavaScript</span>
-            </div>
-            <div className="flex flex-col items-center space-y-2">
-              <SiBootstrap size={40} className="text-[#563d7c]" />
-              <span className="font-bold">Bootstrap</span>
-            </div>
-            <div className="flex flex-col items-center space-y-2">
-              <SiTailwindcss size={40} className="text-[#38bdf8]" />
-              <span className="font-bold">Tailwind CSS</span>
-            </div>
-            <div className="flex flex-col items-center space-y-2">
-              <FaReact size={40} className="text-[#61dbfb]" />
-              <span className="font-bold">React.js</span>
-            </div>
-            <div className="flex flex-col items-center space-y-2">
-              <SiRedux size={40} className="text-[#764abc]" />
-              <span className="font-bold">Redux</span>
-            </div>
-            <div className="flex flex-col items-center space-y-2">
-              <TbBrandFramerMotion size={40} className="text-[#1c1c1c]" />
-              <span className="font-bold">Framer Motion</span>
-            </div>
-            <div className="flex flex-col items-center space-y-2">
-              <IoLogoNpm size={40} className="text-[#CB3837]" />
-              <span className="font-bold">NPM</span>
-            </div>
-            <div className="flex flex-col items-center space-y-2">
-              <FaNode size={40} className="text-[#68a063]" />
-              <span className="font-bold">Node.js</span>
-            </div>
-            <div className="flex flex-col items-center space-y-2">
-              <SiExpress size={40} className="text-[#000000]" />
-              <span className="font-bold">Express.js</span>
-            </div>
-            <div className="flex flex-col items-center space-y-2">
-              <SiMongodb size={40} className="text-[#47a248]" />
-              <span className="font-bold">MongoDB</span>
-            </div>
-            <div className="flex flex-col items-center space-y-2">
-              <SiNextdotjs size={40} className="text-black" />
-              <span className="font-bold">Next.js</span>
-            </div>
-            <div className="flex flex-col items-center space-y-2">
-              <SiJsonwebtokens size={40} className="text-[#232F3E]" />
-              <span className="font-bold">JWT</span>
-            </div>
-            <div className="flex flex-col items-center space-y-2">
-              <SiSocketdotio size={40} className="text-[#010101]" />
-              <span className="font-bold">Socket.IO</span>
-            </div>
-            <div className="flex flex-col items-center space-y-2">
-              <FaGitAlt size={40} className="text-[#f05032]" />
-              <span className="font-bold">Git</span>
-            </div>
-            <div className="flex flex-col items-center space-y-2">
-              <FaGithub size={40} className="text-black" />
-              <span className="font-bold">GitHub</span>
-            </div>
-            <div className="flex flex-col items-center space-y-2">
-              <DiVisualstudio size={40} className="text-[#0078d7]" />
-              <span className="font-bold">VS Code</span>
-            </div>
-            <div className="flex flex-col items-center space-y-2">
-              <SiPostman size={40} className="text-[#ef5b25]" />
-              <span className="font-bold">Postman</span>
-            </div>
-            <div className="flex flex-col items-center space-y-2">
-              <SiGraphql size={40} className="text-[#e535ab]" />
-              <span className="font-bold">GraphQL</span>
-            </div>
-            <div className="flex flex-col items-center space-y-2">
-              <IoLogoVercel size={40} className="text-[#000]" />
-              <span className="font-bold">Vercel</span>
-            </div>
-            <div className="flex flex-col items-center space-y-2">
-              <SiNetlify size={40} className="text-[#00d1b2]" />
-              <span className="font-bold">Netlify</span>
-            </div>
-            <div className="flex flex-col items-center space-y-2">
-              <SiRender size={40} className="text-[#000]" />
-              <span className="font-bold">Render</span>
-            </div>
-            <div className="flex flex-col items-center space-y-2">
-              <FaFigma size={40} className="text-[#F24E1E]" />
-              <span className="font-bold">Figma</span>
-            </div>
-          </div>
-        </div>
+        {/* Additional Bio Details */}
+        <p className="text-gray-800 max-w-3xl mx-auto font-serif mt-8">
+          I graduated in 2024 with a degree in Computer Technology. I have led 
+          <span className="font-semibold text-gray-900"> tech teams</span>, presented at  
+          <span className="font-semibold text-gray-900"> hackathons & conferences</span>, and contributed to  
+          <span className="font-medium text-gray-900"> open-source projects</span>.  
+          I have built and deployed multiple projects, including 
+          <span className="font-bold text-blue-700"> Coffero</span> (a coffee shop website) &  
+          <span className="font-bold text-blue-700"> Knowledge Bridge</span> (an online course platform), ensuring seamless user experience and backend efficiency.
+        </p>
+        <p className="text-gray-950 max-w-3xl mx-auto mt-6 font-semibold">
+          I'm always excited to work on new projects and collaborate with like-minded developers. Let's connect and create something amazing!
+        </p>
       </div>
+
+      {/* Skills Section */}
+      <section id="skills" className="mt-20">
+        <h1 className="text-5xl font-serif font-semibold text-gray-800 mb-14 tracking-wide">
+          My Skills
+        </h1>
+
+        {/* Skill Boxes Grid */}
+        <div className="max-w-6xl mx-auto grid md:grid-cols-2 lg:grid-cols-3 gap-10">
+          <SkillCategory title="FRONTEND" skills={[
+            { icon: <FaHtml5 />, name: "HTML" },
+            { icon: <FaCss3Alt />, name: "CSS" },
+            { icon: <FaJs />, name: "JavaScript" },
+            { icon: <FaReact />, name: "React.js" },
+            { icon: <FaBootstrap />, name: "Bootstrap" },
+          ]} />
+
+          <SkillCategory title="BACKEND" skills={[
+            { icon: <FaNodeJs />, name: "Node.js" },
+            { icon: <SiExpress />, name: "Express.js" },
+            { icon: <SiMongodb />, name: "MongoDB" },
+            { icon: <SiMysql />, name: "MySQL" },
+            { icon: <FaPython />, name: "Python" },
+          ]} />
+
+          <SkillCategory title="TOOLS & SERVICES" skills={[
+            { icon: <FaGit />, name: "Git" },
+            { icon: <FaGithub />, name: "GitHub" },
+            { icon: <SiPostman />, name: "Postman" },
+            { icon: <SiCanva />, name: "Canva" },
+            { icon: <SiVercel />, name: "Vercel" },
+            { icon: <SiNetlify />, name: "Netlify" },
+          ]} />
+        </div>
+      </section>
+    </section>
+  );
+};
+
+const SkillCategory = ({ title, skills }) => {
+  return (
+    <div className="border border-gray-400 rounded-3xl p-6 shadow-lg bg-white">
+      <h3 className="text-xl font-semibold mb-6 text-gray-900 uppercase tracking-wide">{title}</h3>
+      <div className="flex flex-wrap justify-center gap-4">
+        {skills.map((skill, index) => (
+          <SkillItem key={index} icon={skill.icon} name={skill.name} />
+        ))}
+      </div>
+    </div>
+  );
+};
+
+const SkillItem = ({ icon, name }) => {
+  return (
+    <div className="flex items-center gap-3 border border-gray-400 px-4 py-2 rounded-2xl shadow-md text-gray-900 
+      hover:bg-gray-900 hover:text-gray-100 transition-all duration-300 cursor-pointer transform hover:scale-105">
+      <span className="text-xl">{icon}</span>
+      <span className="text-lg font-medium">{name}</span>
     </div>
   );
 };

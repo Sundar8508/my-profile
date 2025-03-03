@@ -1,12 +1,12 @@
 import { FaPhoneAlt, FaEnvelope } from "react-icons/fa";
-import { FaLocationDot } from "react-icons/fa6";
-import { FaGithub, FaLinkedin, FaInstagram } from "react-icons/fa";
+import { FaGithub, FaLinkedin, FaInstagram, FaUser, FaCommentDots } from "react-icons/fa";
 import { useState } from "react";
 
 const Contact = () => {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
+    phone: "",
     message: "",
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -32,7 +32,7 @@ const Contact = () => {
 
       if (response.ok) {
         setSuccess(true);
-        setFormData({ name: "", email: "", message: "" });
+        setFormData({ name: "", email: "", phone: "", message: "" });
       } else {
         setSuccess(false);
       }
@@ -44,102 +44,88 @@ const Contact = () => {
   };
 
   return (
-    <div id="contact" className="bg-[#ffffff] min-h-screen flex items-center justify-center">
-      <div className="max-w-[90%] md:max-w-[75%] mx-auto font-inter space-y-10 py-10">
-        <div className="text-center">
-          <h2 className="text-4xl md:text-5xl font-bold text-center text-[#fe5617]">
-            Get in touch
-          </h2>
-        </div>
-        <div className="flex flex-col items-center md:flex-row gap-[150px] justify-center">
-          <div className="flex flex-col space-y-5 text-lg md:text-xl font-semibold">
-            <div className="flex items-center gap-3">
-              <FaLocationDot className="text-[#fe5617]" size={20} />
-              <span>Pondicherry</span>
-            </div>
-            <div className="flex items-center gap-3">
-              <FaPhoneAlt className="text-[#fe5617]" size={20} />
-              <span>9092595881</span>
-            </div>
-            <div className="flex items-center gap-3">
-              <FaEnvelope className="text-[#fe5617]" size={20} />
-              <span>immucoder@gmail.com</span>
-            </div>
-            <div className="flex flex-col items-center gap-3">
-              <h2 className="text-xl font-bold">Follow on</h2>
-              <div className="flex gap-4">
-                <a
-                  href="https://github.com/AMOHAMMEDIMRAN"
-                  className="hover:text-[#fe5617]"
-                >
-                  <FaGithub size={29} />
-                </a>
-                <a
-                  href="https://www.linkedin.com/in/mohammedimrana/"
-                  className="hover:text-[#fe5617]"
-                >
-                  <FaLinkedin size={29} />
-                </a>
-                <a
-                  href="https://www.instagram.com/immucoder/?__pwa=1"
-                  className="hover:text-[#fe5617]"
-                >
-                  <FaInstagram size={29} />
-                </a>
-              </div>
+    <div id="contact" className="bg-[#f5f5f5] min-h-screen flex items-center justify-center p-6">
+      <div className="max-w-5xl w-full px-6 md:px-12 py-12 flex flex-col md:flex-row gap-12 bg-white shadow-xl rounded-lg">
+        <div className="w-full md:w-1/3 space-y-6 text-gray-800">
+          <h2 className="text-4xl font-bold text-[#3b5be8]">Contact Me</h2>
+          <div>
+            <p className="font-semibold">Phone Number</p>
+            <p className="text-gray-600 flex items-center gap-2"><FaPhoneAlt /> +91 63829 80374</p>
+          </div>
+          <div>
+            <p className="font-semibold">Email</p>
+            <p className="text-gray-600 flex items-center gap-2"><FaEnvelope /> sundarm541@gmail.com</p>
+          </div>
+          <div>
+            <p className="font-semibold">Social Network</p>
+            <div className="flex gap-4 text-gray-700 text-xl">
+              <a href="http://www.linkedin.com/in/sundar-m85" className="hover:text-[#fe5617]"><FaLinkedin /></a>
+              <a href="https://www.instagram.com/bros_vk?igsh=MWVyc3U3ajR3bGNkcw==" className="hover:text-[#fe5617]"><FaInstagram /></a>
+              <a href="https://github.com/Sundar8508/final-project" className="hover:text-[#fe5617]"><FaGithub /></a>
             </div>
           </div>
-
-          {/* Contact Form */}
-          <form
-            onSubmit={handleSubmit}
-            className="flex flex-col gap-5 w-full max-w-md"
-          >
-            <h2 className="text-2xl font-bold text-[#fe5617] text-center">
-              Send a Message
-            </h2>
-            <input
-              type="text"
-              name="name"
-              placeholder="Your Name"
-              value={formData.name}
-              onChange={handleChange}
-              required
-              className="border border-gray-300 rounded-md p-3"
-            />
-            <input
-              type="email"
-              name="email"
-              placeholder="Your Email"
-              value={formData.email}
-              onChange={handleChange}
-              required
-              className="border border-gray-300 rounded-md p-3"
-            />
-            <textarea
-              name="message"
-              placeholder="Your Message"
-              value={formData.message}
-              onChange={handleChange}
-              required
-              className="border border-gray-300 rounded-md p-3 h-32"
-            ></textarea>
+        </div>
+        <div className="w-full md:w-2/3 bg-white shadow-lg rounded-lg p-8">
+          <form onSubmit={handleSubmit} className="space-y-4">
+            <div className="relative">
+              <FaUser className="absolute top-4 left-3 text-gray-500" />
+              <input
+                type="text"
+                name="name"
+                placeholder="Your Name"
+                value={formData.name}
+                onChange={handleChange}
+                required
+                className="w-full border border-gray-300 rounded-md p-3 pl-10"
+              />
+            </div>
+            <div className="relative">
+              <FaEnvelope className="absolute top-4 left-3 text-gray-500" />
+              <input
+                type="email"
+                name="email"
+                placeholder="Your Email"
+                value={formData.email}
+                onChange={handleChange}
+                required
+                className="w-full border border-gray-300 rounded-md p-3 pl-10"
+              />
+            </div>
+            <div className="relative">
+              <FaPhoneAlt className="absolute top-4 left-3 text-gray-500" />
+              <input
+                type="text"
+                name="phone"
+                placeholder="Phone Number"
+                value={formData.phone}
+                onChange={handleChange}
+                required
+                className="w-full border border-gray-300 rounded-md p-3 pl-10"
+              />
+            </div>
+            <div className="relative">
+              <FaCommentDots className="absolute top-4 left-3 text-gray-500" />
+              <textarea
+                name="message"
+                placeholder="Your Message"
+                value={formData.message}
+                onChange={handleChange}
+                required
+                className="w-full border border-gray-300 rounded-md p-3 pl-10 h-32"
+              ></textarea>
+            </div>
             <button
               type="submit"
-              className="bg-[#fe5617] text-white py-3 rounded-md font-semibold hover:bg-[#d44810] disabled:opacity-50"
+              className="w-full bg-[#3b5be8] text-white py-3 rounded-md font-semibold hover:bg-[#2c49c5] transition-all duration-300 ease-in-out disabled:opacity-50"
               disabled={isSubmitting}
             >
-              {isSubmitting ? "Sending..." : "Send Message"}
+              {isSubmitting ? "Sending..." : "SEND"}
             </button>
             {success === true && (
-              <p className="text-green-500 text-center">
-                Message sent successfully!
-              </p>
+              <p className="text-green-600 text-center font-semibold mt-2">Message sent successfully!</p>
             )}
             {success === false && (
-              <p className="text-red-500 text-center">
-                Failed to send the message. Try again.
-              </p>
+              <p className="text-red-600 text-center font-semibold mt-2">Failed to send the message. Try again.</p>
             )}
           </form>
         </div>

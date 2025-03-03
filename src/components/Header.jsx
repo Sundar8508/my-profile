@@ -1,108 +1,114 @@
 import { useState } from "react";
-import { FaGithub, FaLinkedin, FaInstagram } from "react-icons/fa";
-import { HiMenuAlt3, HiX } from "react-icons/hi";
 import { Link } from "react-scroll";
+import { FaBars, FaTimes } from "react-icons/fa";
+import bgImage from "../images/home-bg.jpg";
+import image from "../images/profile.jpg";
 
 const Header = () => {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <div className="bg-[#FFFFFF]">
-      <div className="max-w-[90%] mx-auto py-3 flex items-center justify-between font-inter">
-        {/* Logo */}
-        <div>
-          <h1 className="text-[2.5rem] font-bold text-[#000] hover:text-[#fe5617] ">
-            Imran.
-          </h1>
+    <>
+      
+      <nav className="fixed top-0 left-0 w-full z-50 backdrop-blur-lg py-3 px-8 flex justify-between items-center shadow-md bg-white/30">
+        
+        <div className="text-lg font-bold text-gray-900">Sundar M</div>
+
+        
+        <div className="hidden md:flex gap-10 text-gray-900 font-medium tracking-wider text-sm md:text-base">
+          {["Home", "About", "Projects", "Certificates", "Contact"].map((item) => (
+            <Link
+              key={item}
+              to={item.toLowerCase()}
+              smooth={true}
+              duration={800}
+              offset={-70}
+              className="cursor-pointer hover:text-blue-600 transition-all"
+            >
+              {item}
+            </Link>
+          ))}
         </div>
 
-        {/* Hamburger Menu for Mobile */}
-        <div className="lg:hidden">
-          <button
-            onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className=" transition-all duration-500 ease-in text-[#fe5617] "
-          >
-            {isMenuOpen ? <HiX size={29} /> : <HiMenuAlt3 size={29} />}
-          </button>
-        </div>
+        
+        <button className="md:hidden text-gray-900 text-xl" onClick={() => setIsOpen(!isOpen)}>
+          {isOpen ? <FaTimes /> : <FaBars />}
+        </button>
 
-        {/* Navigation Menu */}
-        <nav
-          className={`${
-            isMenuOpen ? "block" : "hidden"
-          } absolute top-[70px] left-0 w-full bg-[#F2EFE5] p-5 lg:p-0 lg:relative lg:block lg:w-auto lg:px-5 lg:py-3 lg:rounded-2xl lg:top-0`}
-        >
-          <ul className="flex flex-col gap-3 lg:flex-row lg:items-center lg:gap-5 text-[14px] font-semibold">
-           <Link to="home" smooth={true} duration={500}>
-           <li className="hover:text-[#fe5617] cursor-pointer transition-transform duration-300 ease-in transform hover:translate-y-[-7px] ">
-              Home
-            </li></Link>
-            <Link to="about" smooth={true} duration={500}>
-            <li className="hover:text-[#fe5617] cursor-pointer transition-transform duration-300 ease-in transform hover:translate-y-[-7px] ">
-              About
-            </li>
-            </Link>
-           <Link to="project" smooth={true} duration={500}>
-           <li className="hover:text-[#fe5617] cursor-pointer transition-transform duration-300 ease-in transform hover:translate-y-[-7px] ">
-              Project
-            </li>
-           </Link>
-            <Link to="contact" smooth={true} duration={500}>
-            <li className="hover:text-[#fe5617] cursor-pointer transition-transform duration-300 ease-in transform hover:translate-y-[-7px] ">
-              Contact
-            </li>
-            </Link>
-          </ul>
-          {/* Social Media Links for Mobile */}
-          <div
-            className={`${
-              isMenuOpen ? "block" : "hidden"
-            } lg:hidden mt-3 flex justify-center gap-5`}
-          >
-            <a
-              href="https://github.com/AMOHAMMEDIMRAN"
-              className="  hover:text-[#fe5617] "
-            >
-              <FaGithub size={29} />
-            </a>
-            <a
-              href="https://www.linkedin.com/in/mohammedimrana/"
-              className="hover:text-[#fe5617]"
-            >
-              <FaLinkedin size={29} />
-            </a>
-            <a
-              href="https://www.instagram.com/immucoder/?__pwa=1"
-              className="hover:text-[#fe5617]"
-            >
-              <FaInstagram size={29} />
-            </a>
+        
+        {isOpen && (
+          <div className="absolute top-16 left-0 w-full bg-gray-300 shadow-md flex flex-col items-center gap-4 py-4 md:hidden">
+            {["Home", "About", "Projects", "Certificates", "Contact"].map((item) => (
+              <Link
+                key={item}
+                to={item.toLowerCase()}
+                smooth={true}
+                duration={800}
+                offset={-70}
+                className="cursor-pointer text-gray-900 hover:text-blue-600 transition-all text-lg"
+                onClick={() => setIsOpen(false)} 
+              >
+                {item}
+              </Link>
+            ))}
           </div>
-        </nav>
+        )}
+      </nav>
 
-        {/* Social Media Links */}
-        <div className="hidden lg:flex w-[100px] items-center justify-between">
-          <a
-            href="https://github.com/AMOHAMMEDIMRAN"
-            className="hover:text-[#fe5617]"
-          >
-            <FaGithub size={29} />
-          </a>
-          <a
-            href="https://www.linkedin.com/in/mohammedimrana/"
-            className="hover:text-[#fe5617]"
-          >
-            <FaLinkedin size={29} />
-          </a>
-          <a
-            href="https://www.instagram.com/immucoder/?__pwa=1"
-            className="hover:text-[#fe5617]"
-          >
-            <FaInstagram size={29} />
-          </a>
+      {/* Hero Section */}
+      <header
+        id="home"
+        className="relative min-h-screen flex items-center justify-center px-10 bg-cover bg-center bg-no-repeat"
+        style={{ backgroundImage: `url(${bgImage})` }}
+      >
+        
+        <div className="absolute inset-0 bg-black/20"></div>
+
+        <div className="relative z-10 max-w-7xl w-full grid grid-cols-1 md:grid-cols-2 gap-10 items-center bg-white/30  p-10 rounded-lg shadow-lg">
+          
+          <div className="text-left">
+            <h2 className="text-lg md:text-base text-blue-600 font-bold tracking-wider">
+              SUNDAR.M
+            </h2>
+
+            <h1 className="text-4xl md:text-5xl font-serif font-extrabold text-gray-900 mt-1 leading-tight">
+              Full-stack Developer
+            </h1>
+            <p className="mt-3 text-gray-700 text-base md:text-lg">
+              Passionate about crafting scalable web applications & APIs.
+            </p>
+
+            {/* Buttons */}
+            <div className="mt-5 flex gap-4">
+              <a
+                href="https://1drv.ms/b/s!AsQUUcJznVpjkYRgNYFoEWoKrCEU2g?e=nQf6oN"
+                download
+                className="px-5 py-2 border border-gray-900 text-gray-900 font-medium rounded-md hover:bg-blue-600 hover:text-white transition-all text-sm md:text-base"
+              >
+                View Resume
+              </a>
+              <a
+                href="http://www.linkedin.com/in/sundar-m85"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="px-5 py-2 border border-gray-900 text-gray-900 font-medium rounded-md hover:bg-blue-600 hover:text-white transition-all text-sm md:text-base"
+              >
+                LinkedIn
+              </a>
+            </div>
+          </div>
+
+          
+          <div className="flex justify-center">
+            <img
+              src={image}
+              alt="Profile"
+              className="rounded-lg border-4 border-r-8 border-gray-300 shadow-xl grayscale hover:grayscale-0 transition-all duration-500 w-auto h-[350px] md:h-[400px]"
+            />
+          </div>
         </div>
-      </div>
-    </div>
+      </header>
+    </>
   );
 };
 
