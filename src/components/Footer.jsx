@@ -1,5 +1,6 @@
 import { FaGithub, FaLinkedin, FaInstagram } from "react-icons/fa";
-import bgImage from "../images/footer-bg.jpg";
+import footerBg from "../images/footer-bg.jpg";
+
 
 
 const Footer = () => {
@@ -7,7 +8,7 @@ const Footer = () => {
     <footer
       className="relative bg-cover bg-center bg-no-repeat text-white py-4"
       style={{
-        backgroundImage: `url(${bgImage})`, 
+        backgroundImage: `url(${footerBg})`, 
       }}
     >
       
