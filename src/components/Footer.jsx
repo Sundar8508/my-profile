@@ -1,5 +1,5 @@
 import { FaGithub, FaLinkedin, FaInstagram } from "react-icons/fa";
-import footerBg from "../images/footer-bg.jpg";
+import footerBg from "../Images/footer-bg.jpg";
 
 
 

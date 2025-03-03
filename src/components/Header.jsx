@@ -1,8 +1,8 @@
 import { useState } from "react";
 import { Link } from "react-scroll";
 import { FaBars, FaTimes } from "react-icons/fa";
-import bgImage from "../images/home-bg.jpg";
-import image from "../images/profile.jpg";
+import bgImage from "../Images/home-bg.jpg";
+import image from "../Images/profile.jpg";
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
