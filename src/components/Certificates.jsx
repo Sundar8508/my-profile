@@ -44,33 +44,31 @@ export default function Certificates() {
   }, []);
 
   return (
-    <section id="certificates" className="py-16 px-6 text-center bg-gray-50">
-      <div className="mb-10">
-        <h1 className="text-4xl font-extrabold text-gray-900 border-b-4 border-blue-500 inline-block pb-2 tracking-wide">
+    <section id="certificates" className="py-20 px-6 text-center bg-gradient-to-b from-gray-50 to-gray-100">
+      <div className="mb-12">
+        <h1 className="text-4xl font-extrabold text-gray-900 border-b-4 border-blue-600 inline-block pb-3 tracking-wide font-sans">
           Certifications & Achievements
         </h1>
-        <p className="mt-2 text-lg text-gray-700 font-medium">
-          Verified credentials showcasing my expertise.
+        <p className="mt-4 text-lg text-gray-700 font-medium max-w-2xl mx-auto font-serif">
+          Showcasing my verified credentials in development & technology.
         </p>
       </div>
 
-      <div className="max-w-6xl mx-auto space-y-12">
+      <div className="max-w-5xl mx-auto space-y-12">
         {certificates.map((certificate, index) => (
           <div
             key={index}
             ref={(el) => (certificateRefs.current[index] = el)}
-            className="flex flex-col md:flex-row items-center bg-white shadow-lg rounded-xl overflow-hidden border border-gray-200 p-6 opacity-0 transform translate-x-[-50px] transition-transform duration-500 ease-out"
+            className="certificate-card flex flex-col md:flex-row items-center bg-white shadow-lg rounded-2xl overflow-hidden border border-gray-300 p-8 opacity-0 transform translate-x-[-50px] transition-transform duration-700 ease-in-out hover:scale-105 hover:shadow-xl"
           >
-            {/* Certificate Details */}
-            <div className="w-full p-6 md:p-8 text-left">
-              <h2 className="text-3xl font-bold text-gray-900 tracking-wide">{certificate.title}</h2>
-              <p className="text-lg text-gray-700 mt-4 leading-relaxed">
-                {certificate.description}
-              </p>
+            {/* Left Side - Certificate Info */}
+            <div className="w-full text-left">
+              <h2 className="text-2xl font-bold text-gray-900 tracking-wide font-sans">{certificate.title}</h2>
+              <p className="text-lg text-gray-700 mt-4 leading-relaxed font-serif">{certificate.description}</p>
 
               {/* View Certificate Button */}
               <a
-                className="mt-6 inline-block bg-blue-600 text-white text-lg px-6 py-2 rounded-lg font-semibold shadow-md hover:bg-blue-700 transition-all duration-300 ease-in-out"
+                className="mt-6 inline-block bg-gradient-to-r from-blue-600 to-indigo-600 text-white text-lg px-6 py-2 rounded-lg font-semibold shadow-md hover:scale-110 hover:from-indigo-600 hover:to-blue-600 transition-all duration-300 ease-in-out"
                 href={certificate.link}
                 target="_blank"
                 rel="noopener noreferrer"
@@ -87,7 +85,18 @@ export default function Certificates() {
           .fade-in-left {
             opacity: 1 !important;
             transform: translateX(0) !important;
-            transition: transform 0.5s ease-out, opacity 0.5s ease-out;
+            transition: transform 0.7s ease-out, opacity 0.7s ease-out;
+          }
+
+          .certificate-card {
+            border-radius: 20px;
+            box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.1);
+            transition: all 0.5s ease-in-out;
+          }
+
+          .certificate-card:hover {
+            transform: scale(1.05);
+            box-shadow: 0px 15px 40px rgba(0, 0, 0, 0.2);
           }
         `}
       </style>
