@@ -49,7 +49,7 @@ const About = () => {
           <span className="font-bold text-blue-700"> Knowledge Bridge</span> (an online course platform), ensuring seamless user experience and backend efficiency.
         </p>
         <p className="text-gray-950 max-w-3xl mx-auto mt-6 font-semibold">
-          I'm always excited to work on new projects and collaborate with like-minded developers. Let's connect and create something amazing!
+          I'm always excited to work on new projects and collaborate with like-minded developer. Let's connect and create something amazing!
         </p>
       </div>
 
@@ -91,7 +91,7 @@ const About = () => {
 
 const SkillCategory = ({ title, skills, visibleSkills }) => {
   return (
-    <div className="border border-gray-400 rounded-3xl p-6 shadow-lg bg-white">
+    <div className="border border-gray-500 rounded-3xl p-6 shadow-lg bg-white">
       <h3 className="text-xl font-semibold mb-6 text-gray-900 uppercase tracking-wide">{title}</h3>
       <div className="flex flex-wrap justify-center gap-4">
         {skills.map((skill, index) => (
