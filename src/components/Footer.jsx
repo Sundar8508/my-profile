@@ -16,7 +16,7 @@ const Footer = () => {
 
       <div className="relative max-w-2xl mx-auto text-center space-y-3 px-3">
         <p className="text-xs md:text-sm opacity-75">
-          © {new Date().getFullYear()} All rights reserved.
+          © {new Date().getFullYear()} All rights reserved..
         </p>
         <p className="text-xs md:text-sm">
           Made by:{' '}
